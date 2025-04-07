@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TeleDirectMD - Intake Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold mb-6">Patient Intake Form</h1>
+    <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-4">
+
+      <h2 class="text-xl font-semibold">Personal Information</h2>
+      <input type="text" name="full_name" placeholder="Full Name" required class="w-full p-2 border rounded" />
+      <input type="email" name="email" placeholder="Email Address" required class="w-full p-2 border rounded" />
+      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-2 border rounded" />
+      <input type="text" name="address" placeholder="Street Address" class="w-full p-2 border rounded" />
+      <input type="text" name="city" placeholder="City" class="w-full p-2 border rounded" />
+      <input type="text" name="state" placeholder="State" class="w-full p-2 border rounded" />
+      <input type="text" name="zip" placeholder="ZIP Code" class="w-full p-2 border rounded" />
+      <input type="date" name="dob" placeholder="Date of Birth" class="w-full p-2 border rounded" />
+
+      <h2 class="text-xl font-semibold mt-6">Insurance Information</h2>
+      <input type="text" name="insurance_provider" placeholder="Insurance Provider" class="w-full p-2 border rounded" />
+      <input type="text" name="policy_number" placeholder="Policy Number" class="w-full p-2 border rounded" />
+      <input type="text" name="group_number" placeholder="Group Number" class="w-full p-2 border rounded" />
+      <input type="text" name="subscriber_name" placeholder="Subscriber Name" class="w-full p-2 border rounded" />
+
+      <h2 class="text-xl font-semibold mt-6">Reason for Visit</h2>
+      <textarea name="symptoms" rows="5" placeholder="Describe your symptoms or reason for visit..." required class="w-full p-2 border rounded"></textarea>
+
+      <label class="block mt-4">
+        <input type="checkbox" name="consent" required />
+        I consent to receiving telemedicine care and agree to the Privacy Policy and Terms.
+      </label>
+
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Submit Form
+      </button>
+    </form>
+  </div>
+</body>
+</html>
