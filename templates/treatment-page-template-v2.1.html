@@ -1,0 +1,1404 @@
+<!-- TeleDirectMD | [CONDITION_NAME_FULL] Treatment Page - National | AI-OPTIMIZED v2.1 -->
+
+<!--
+═══════════════════════════════════════════════════════════════
+CUSTOMIZATION GUIDE - FILL IN THESE VARIABLES FIRST
+═══════════════════════════════════════════════════════════════
+
+CORE VARIABLES:
+├── [CONDITION_NAME_FULL] = Full clinical name (e.g., "Adult Bacterial Sinusitis Treatment (Acute Bacterial Rhinosinusitis)")
+├── [CONDITION_NAME_SHORT] = Short name for titles (e.g., "Bacterial Sinusitis")
+├── [CONDITION_NAME_COMMON] = How patients say it (e.g., "sinus infection")
+├── [URL_SLUG] = URL path (e.g., "bacterial-sinusitis-treatment-online")
+├── [ICD10_CODE] = Primary ICD-10 code (e.g., "J01.90")
+├── [CONDITION_CATEGORY] = respiratory | skin | uti-reproductive | pain | chronic-refill | other
+
+CLINICAL DETAILS:
+├── [GUIDELINE_SOURCE] = e.g., "Infectious Diseases Society of America (IDSA)"
+├── [GUIDELINE_YEAR] = e.g., "2012"
+├── [MAIN_SYMPTOMS] = Comma-separated list (e.g., "nasal congestion, facial pressure, thick discharge")
+├── [RED_FLAGS] = Emergency symptoms list
+├── [FIRST_LINE_RX] = Primary medication with dosing
+├── [ALTERNATIVE_RX] = Alternative medication(s)
+├── [SUPPORTIVE_CARE] = Non-prescription treatments
+
+ELIGIBILITY CRITERIA:
+├── [ELIGIBLE_IF] = Positive inclusion criteria (bullet list)
+├── [NOT_ELIGIBLE_IF] = Exclusion criteria (bullet list)
+├── [EMERGENCY_IF] = Go to ER criteria (bullet list)
+
+COMPARISON DATA:
+├── [URGENT_CARE_REASON] = When to use urgent care instead
+├── [ER_REASON] = When to use ER instead
+├── [PRIMARY_CARE_REASON] = When to use primary care instead
+├── [SPECIALIST_TYPE] = Relevant specialist (e.g., "ENT", "Dermatologist")
+├── [SPECIALIST_REASON] = When to see specialist
+
+DECISION TREE:
+├── [BACTERIAL_VS_VIRAL] = How to distinguish (if applicable)
+├── [SYMPTOM_DURATION_THRESHOLD] = e.g., "10 days"
+├── [FEVER_THRESHOLD] = e.g., "102.2°F (39°C)"
+
+RELATED CONDITIONS (4 max):
+├── [RELATED_1_NAME] = e.g., "Common Cold"
+├── [RELATED_1_URL] = e.g., "/common-cold-treatment-online"
+├── [RELATED_1_DESC] = e.g., "Viral congestion..."
+... repeat for 2, 3, 4
+
+METADATA:
+├── [LAST_REVIEWED_DATE] = ISO format "2026-01-21"
+├── [CONDITION_DESCRIPTION_META] = For schema.org (2-3 sentences)
+
+═══════════════════════════════════════════════════════════════
+-->
+
+<section class="tdmd-hero" id="[URL_SLUG]-hero">
+  <div class="tdmd-container">
+    <div class="tdmd-hero-grid">
+      <div class="tdmd-hero-copy">
+        <h1>[CONDITION_NAME_FULL]</h1>
+        <p class="tdmd-hero-sub">MD-only [CONDITION_NAME_COMMON] care by secure online video visit, $49 flat-fee, no insurance required.</p>
+        <p>
+          [CONDITION_OVERVIEW_PARAGRAPH - 2-3 sentences explaining what the condition is, mentioning guideline-based approach if applicable]
+        </p>
+
+        <ul class="tdmd-hero-benefits">
+          <li>$49 flat-fee adult visit</li>
+          <li>MD-only care (no mid-levels)</li>
+          <li>No insurance required</li>
+          <li>Secure video visits in 27 states</li>
+        </ul>
+
+        <div class="tdmd-hero-ctas">
+          <a href="/book" class="tdmd-btn tdmd-btn-primary">Book a Visit</a>
+          <a href="/what-we-treat" class="tdmd-btn tdmd-btn-outline">View All Adult Conditions</a>
+        </div>
+
+        <p class="tdmd-reviewed">
+          Last reviewed on [LAST_REVIEWED_DATE_DISPLAY] by <a class="tdmd-author-link" href="/about" aria-label="About Parth Bhavsar, MD">Parth Bhavsar, MD</a>
+        </p>
+      </div>
+
+      <div class="tdmd-hero-side">
+        <div class="tdmd-hero-card">
+          <h2>Online MD-Only [CONDITION_NAME_SHORT] Care</h2>
+          <ul>
+            [HERO_CARD_BULLETS - 4 bullets about what's included in the visit]
+          </ul>
+          <p class="tdmd-hero-note">
+            Adults 18+ only. No controlled substances are prescribed through TeleDirectMD. [RED_FLAGS_BRIEF_SUMMARY] requires urgent in-person evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 1: ELIGIBILITY CHECKLIST (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-eligibility-checklist">
+  <div class="tdmd-container">
+    <h2>[CONDITION_NAME_SHORT] Telehealth Eligibility Checklist</h2>
+    <p><strong>You are likely eligible for a TeleDirectMD video visit if ALL of these are true:</strong></p>
+
+    <div class="tdmd-grid tdmd-grid-2">
+      <div class="tdmd-card tdmd-card-good">
+        <h3>✓ You ARE Eligible If:</h3>
+        <ul class="tdmd-checklist tdmd-checklist--good">
+          <li>You are 18 years old or older</li>
+          <li>You are located in one of our 27 service states during the visit</li>
+          [ELIGIBLE_IF_BULLETS - condition-specific inclusion criteria, typically 3-5 bullets]
+          <li>You are able to pay $49 by credit card (no insurance billing available)</li>
+        </ul>
+      </div>
+
+      <div class="tdmd-card tdmd-card-alert">
+        <h3>✗ You Are NOT Eligible If:</h3>
+        <ul class="tdmd-checklist tdmd-checklist--alert">
+          <li>You are under 18 years old (pediatric care required)</li>
+          [NOT_ELIGIBLE_IF_BULLETS - condition-specific exclusion criteria, typically 4-6 bullets]
+          <li>You need controlled substances (narcotics) for pain management</li>
+        </ul>
+        <p class="tdmd-card-disclaimer">
+          <strong>If you have any red-flag symptoms, seek emergency care immediately. TeleDirectMD is not an emergency service.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 2: COMPARISON TABLE (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-comparison">
+  <div class="tdmd-container">
+    <h2>TeleDirectMD vs Other Care Options for [CONDITION_NAME_SHORT]</h2>
+    <p>Understanding your options helps you choose the right level of care. Here's how TeleDirectMD compares to other treatment settings for [CONDITION_NAME_COMMON]:</p>
+
+    <div class="tdmd-table-wrap">
+      <table class="tdmd-table">
+        <thead>
+          <tr>
+            <th>Care option</th>
+            <th>Typical cost</th>
+            <th>Wait time</th>
+            <th>Provider type</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TeleDirectMD</strong></td>
+            <td><strong>$49 flat fee</strong></td>
+            <td>Same day, often within hours</td>
+            <td>Board-certified MD only (no mid-levels)</td>
+            <td>[TELEDIRECTMD_BEST_FOR - who should use TeleDirectMD for this condition]</td>
+          </tr>
+          <tr>
+            <td>Urgent Care Center</td>
+            <td>$150-$300+ (before insurance)</td>
+            <td>1-3 hours average wait time</td>
+            <td>MD, DO, PA, or NP (provider type varies)</td>
+            <td>[URGENT_CARE_REASON]</td>
+          </tr>
+          <tr>
+            <td>Emergency Room</td>
+            <td>$500-$3,000+ (before insurance)</td>
+            <td>2-6 hours average</td>
+            <td>Emergency medicine MD or DO</td>
+            <td><strong>[ER_REASON - emergency symptoms requiring ER]</strong></td>
+          </tr>
+          <tr>
+            <td>Primary Care Office</td>
+            <td>$100-$250+ (varies by insurance)</td>
+            <td>3-14 days for appointment availability</td>
+            <td>Family medicine or internal medicine MD or DO (your established physician)</td>
+            <td>[PRIMARY_CARE_REASON]</td>
+          </tr>
+          <tr>
+            <td>[SPECIALIST_TYPE] Specialist</td>
+            <td>$200-$400+ (specialist visit, before insurance)</td>
+            <td>1-4 weeks for appointment</td>
+            <td>[SPECIALIST_TYPE] MD</td>
+            <td>[SPECIALIST_REASON]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="tdmd-comparison-note">
+      <strong>Bottom line:</strong> For straightforward [CONDITION_NAME_COMMON] without complications, TeleDirectMD offers the same MD-level evaluation and evidence-based treatment as urgent care or primary care, but with faster access, lower cost, and no surprise bills.
+    </p>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 3: DECISION GUIDE (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-decision-guide">
+  <div class="tdmd-container">
+    <h2>Should I Use TeleDirectMD for My [CONDITION_NAME_COMMON]? Decision Guide</h2>
+    <p>Follow this step-by-step guide to determine the right level of care:</p>
+
+    <div class="tdmd-decision-flow">
+      <div class="tdmd-decision-step tdmd-decision-step-urgent">
+        <div class="tdmd-decision-number">1</div>
+        <div class="tdmd-decision-content">
+          <h3>Do you have ANY of these emergency symptoms?</h3>
+          <ul>
+            [EMERGENCY_IF_BULLETS - red flag symptoms requiring ER, typically 4-6 bullets]
+          </ul>
+          <p class="tdmd-decision-action"><strong>→ If YES: Go to the Emergency Room immediately</strong></p>
+          <p class="tdmd-decision-action"><strong>→ If NO: Continue to Step 2</strong></p>
+        </div>
+      </div>
+
+      <div class="tdmd-decision-step tdmd-decision-step-check">
+        <div class="tdmd-decision-number">2</div>
+        <div class="tdmd-decision-content">
+          <h3>Are you 18 years old or older?</h3>
+          <p class="tdmd-decision-action"><strong>→ If YES: Continue to Step 3</strong></p>
+          <p class="tdmd-decision-action"><strong>→ If NO (under 18): See a pediatrician or pediatric urgent care</strong></p>
+        </div>
+      </div>
+
+      <div class="tdmd-decision-step tdmd-decision-step-check">
+        <div class="tdmd-decision-number">3</div>
+        <div class="tdmd-decision-content">
+          <h3>[DECISION_STEP_3_QUESTION - condition-specific criteria question]</h3>
+          <ul>
+            [DECISION_STEP_3_CRITERIA - typically 3-4 bullets of criteria]
+          </ul>
+          <p class="tdmd-decision-action"><strong>→ If YES: Continue to Step 4</strong></p>
+          <p class="tdmd-decision-action"><strong>→ If NO: [ALTERNATE_PATH - what to do if doesn't meet criteria]</strong></p>
+        </div>
+      </div>
+
+      <div class="tdmd-decision-step tdmd-decision-step-good">
+        <div class="tdmd-decision-number">4</div>
+        <div class="tdmd-decision-content">
+          <h3>You are likely appropriate for a TeleDirectMD video visit</h3>
+          <p>Our board-certified MDs can evaluate your symptoms, recommend evidence-based treatment, and prescribe medications when clinically appropriate.</p>
+          <p class="tdmd-decision-action"><strong>→ Book a $49 video visit now</strong></p>
+          <div class="tdmd-decision-cta">
+            <a href="/book" class="tdmd-btn tdmd-btn-primary">Book a Visit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 4: COST BREAKDOWN (ALWAYS INCLUDE - SAME FOR ALL)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section tdmd-section-highlight" id="[URL_SLUG]-cost">
+  <div class="tdmd-container">
+    <h2>What Does [CONDITION_NAME_SHORT] Treatment Cost with TeleDirectMD?</h2>
+    <p>Transparent, flat-fee pricing with no surprise bills:</p>
+
+    <div class="tdmd-cost-summary">
+      <div class="tdmd-cost-box">
+        <h3>Video Visit Fee</h3>
+        <p class="tdmd-cost-total">$49</p>
+        <p class="tdmd-cost-breakdown">Flat fee, no hidden charges</p>
+      </div>
+      <div class="tdmd-cost-compare">
+        <h3>What's Included:</h3>
+        <ul>
+          <li>Complete evaluation by board-certified MD</li>
+          <li>Diagnosis and treatment plan</li>
+          <li>Prescription sent to your pharmacy (if appropriate)</li>
+          <li>Follow-up instructions and guidance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tdmd-comparison-note">
+      <p><strong>Compare consultation fees:</strong></p>
+      <ul>
+        <li><strong>TeleDirectMD:</strong> $49 flat fee</li>
+        <li><strong>Urgent care visit:</strong> $150-$300+ (before insurance)</li>
+        <li><strong>Emergency room visit:</strong> $500-$3,000+ (before insurance)</li>
+        <li><strong>Primary care visit:</strong> $100-$250+ (varies by insurance)</li>
+      </ul>
+    </div>
+
+    <p class="tdmd-cost-note">
+      <strong>No hidden fees.</strong> You pay $49 for the video visit regardless of diagnosis or treatment. If prescription treatment is not clinically appropriate, you still receive a comprehensive evaluation, symptom management plan, and clear follow-up instructions for the same $49 fee. Prescription costs at your pharmacy are separate and vary by medication and pharmacy.
+    </p>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 5: WHAT IS THE CONDITION? (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="what-is-[URL_SLUG]">
+  <div class="tdmd-container">
+    <h2>What Is [CONDITION_NAME_FULL]?</h2>
+    [CONDITION_DEFINITION - 2-4 paragraphs explaining:
+    - What the condition is
+    - How common it is
+    - Causes/triggers
+    - How TeleDirectMD approaches it
+    - Mention guideline sources if applicable (IDSA, AAD, etc.)
+    ]
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 6: SYMPTOMS AND RED FLAGS (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-symptoms-redflags">
+  <div class="tdmd-container">
+    <h2>Symptoms and Red Flags in [CONDITION_NAME_SHORT]</h2>
+    <p>
+      Many adults with [CONDITION_NAME_COMMON] can be managed via telehealth. Certain symptoms suggest complications or another diagnosis that needs urgent in-person evaluation.
+    </p>
+
+    <div class="tdmd-table-wrap">
+      <table class="tdmd-table">
+        <thead>
+          <tr>
+            <th>Symptom or situation</th>
+            <th>What it suggests</th>
+            <th>Telehealth appropriate?</th>
+            <th>Red flag requiring urgent in-person care</th>
+          </tr>
+        </thead>
+        <tbody>
+          [SYMPTOM_TABLE_ROWS - typically 6-10 rows covering:
+          - Common benign symptoms (telehealth YES)
+          - Moderate symptoms (telehealth YES with caveats)
+          - Red flag symptoms (telehealth NO, ER or urgent care)
+          ]
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 7: DIFFERENTIAL DIAGNOSIS (OPTIONAL - use for complex conditions)
+═══════════════════════════════════════════════════════════════
+-->
+[IF_DIFFERENTIAL_NEEDED]
+<section class="tdmd-section" id="[URL_SLUG]-differential">
+  <div class="tdmd-container">
+    <h2>Differential Diagnosis: [CONDITION_NAME_SHORT] vs Other Conditions</h2>
+    <p>
+      During your TeleDirectMD visit, the MD will use [DIAGNOSTIC_CRITERIA] to distinguish [CONDITION_NAME_SHORT] from other causes of [MAIN_SYMPTOMS].
+    </p>
+
+    <div class="tdmd-grid tdmd-grid-2">
+      <div class="tdmd-card">
+        <h3>Findings Consistent With [CONDITION_NAME_SHORT]</h3>
+        <ul>
+          [POSITIVE_FINDINGS - clinical findings that support this diagnosis]
+        </ul>
+      </div>
+
+      <div class="tdmd-card">
+        <h3>Other Conditions Considered</h3>
+        <ul>
+          [DIFFERENTIAL_CONDITIONS - 3-5 alternative diagnoses with brief descriptions]
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+[END_IF_DIFFERENTIAL_NEEDED]
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 8: WHEN IS TELEHEALTH APPROPRIATE (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-telehealth-eligibility">
+  <div class="tdmd-container">
+    <h2>When Is a Video Visit Appropriate for [CONDITION_NAME_SHORT]?</h2>
+
+    <div class="tdmd-grid tdmd-grid-2">
+      <div class="tdmd-card tdmd-card-good">
+        <h3>When a Video Visit Is Appropriate</h3>
+        <ul class="tdmd-checklist tdmd-checklist--good">
+          [TELEHEALTH_APPROPRIATE_BULLETS - typically 5-6 bullets]
+        </ul>
+      </div>
+
+      <div class="tdmd-card tdmd-card-alert">
+        <h3>Red Flags Requiring In-Person or ER Care</h3>
+        <ul class="tdmd-checklist tdmd-checklist--alert">
+          [RED_FLAG_BULLETS - typically 4-6 bullets]
+        </ul>
+        <p class="tdmd-card-disclaimer">
+          If any red-flag symptoms are present, seek urgent in-person or emergency care. TeleDirectMD is not an emergency service.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 9: TREATMENT OPTIONS (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-treatment-options">
+  <div class="tdmd-container">
+    <h2>Treatment Options for [CONDITION_NAME_SHORT]</h2>
+    [TREATMENT_OVERVIEW_PARAGRAPH]
+
+    <h3>[TREATMENT_CATEGORY_1_NAME - e.g., "Supportive Care", "First-Line Treatment"]</h3>
+    <ul>
+      [TREATMENT_CATEGORY_1_BULLETS]
+    </ul>
+
+    <h3>[TREATMENT_CATEGORY_2_NAME - e.g., "Prescription Medications", "Advanced Treatments"]</h3>
+    [TREATMENT_CATEGORY_2_CONTENT]
+    <ul>
+      [TREATMENT_CATEGORY_2_BULLETS]
+    </ul>
+
+    [OPTIONAL_TREATMENT_CATEGORY_3]
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 10: MEDICATIONS TABLE (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-medications">
+  <div class="tdmd-container">
+    <h2>Common Medications Used for [CONDITION_NAME_SHORT]</h2>
+    <p>
+      The best regimen depends on [INDIVIDUALIZATION_FACTORS - e.g., "symptom pattern, allergy history, recent antibiotics"]. The table below shows typical examples an MD may consider for adults appropriate for telehealth.
+    </p>
+
+    <div class="tdmd-table-wrap">
+      <table class="tdmd-table">
+        <thead>
+          <tr>
+            <th>Medication</th>
+            <th>Dose</th>
+            <th>Duration</th>
+            <th>When it is used</th>
+          </tr>
+        </thead>
+        <tbody>
+          [MEDICATION_ROWS - typically 4-8 rows covering:
+          - First-line prescription(s)
+          - Alternative prescription(s) for allergies/contraindications
+          - Supportive medications (if applicable)
+          - OTC recommendations (if applicable)
+          ]
+        </tbody>
+      </table>
+    </div>
+
+    <p class="tdmd-med-note">
+      <strong>Important:</strong> These are example regimens only. Actual medications, strengths, and durations are determined by the MD after reviewing your complete medical history, allergies, contraindications, kidney function, liver function, and other medications. [CONDITION_SPECIFIC_MED_WARNING if applicable]
+    </p>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 11: HOME CARE & EXPECTATIONS (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-home-care-return-to-work">
+  <div class="tdmd-container">
+    <h2>Home Care, Expectations, and Return to Work</h2>
+    [RECOVERY_TIMELINE_INTRO_PARAGRAPH]
+
+    <h3>What to Expect During Recovery</h3>
+    <ul>
+      [RECOVERY_TIMELINE_BULLETS - typically organized by time periods]
+    </ul>
+
+    <h3>Home Care Instructions</h3>
+    <ul>
+      [HOME_CARE_BULLETS - specific self-care instructions]
+    </ul>
+
+    <h3>Return to Work and Activities</h3>
+    <ul>
+      [RETURN_TO_WORK_BULLETS - guidance on when it's safe to return]
+    </ul>
+
+    <h3>When to Seek Follow-up Care</h3>
+    <p>Contact a healthcare provider or seek urgent care if:</p>
+    <ul>
+      [FOLLOWUP_TRIGGERS - warning signs that need medical attention]
+    </ul>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 12: WHEN NOT TO USE TELEDIRECTMD (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="when-not-teledirectmd">
+  <div class="tdmd-container">
+    <h2>When NOT to Use TeleDirectMD for [CONDITION_NAME_COMMON]</h2>
+    <p>
+      TeleDirectMD is designed for straightforward [CONDITION_NAME_COMMON] without complications. We believe in transparent communication about when our service is not the right fit for your care needs.
+    </p>
+
+    <h3>You Should NOT Use TeleDirectMD If:</h3>
+    <ul>
+      <li><strong>You are under 18 years old:</strong> We only treat adults 18 and older. [PEDIATRIC_REFERRAL_GUIDANCE]</li>
+      [CONDITION_SPECIFIC_EXCLUSIONS - typically 6-10 bullets]
+      <li><strong>You are located outside our service states:</strong> Telemedicine visits require medical licensure in your state. If you're not in one of our 27 service states at the time of your visit, we cannot provide care.</li>
+    </ul>
+
+    <h3>Alternative Care Options:</h3>
+    <ul>
+      <li><strong>Emergency room:</strong> For red-flag symptoms ([ER_SYMPTOMS_BRIEF])</li>
+      <li><strong>Urgent care center:</strong> For [URGENT_CARE_SCENARIOS]</li>
+      <li><strong>[SPECIALIST_TYPE] specialist:</strong> For [SPECIALIST_SCENARIOS]</li>
+      <li><strong>Primary care physician:</strong> For established relationship, complex medical history, or chronic management</li>
+      <li><strong>Pediatrician or pediatric urgent care:</strong> For patients under 18</li>
+    </ul>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 13: COMMON SEARCH QUERIES (ALWAYS INCLUDE - CRITICAL FOR AI)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="common-searches">
+  <div class="tdmd-container">
+    <h2>Common Questions About Online [CONDITION_NAME_SHORT] Treatment</h2>
+    <p>These are the most common questions patients ask when researching online treatment for [CONDITION_NAME_COMMON]. Here are straightforward answers:</p>
+
+    <div class="tdmd-common-q">
+      <h3>Can I get [PRIMARY_TREATMENT_TYPE - e.g., "antibiotics", "prescriptions"] online for [CONDITION_NAME_COMMON]?</h3>
+      <p>
+        [ANSWER_CAN_GET_RX_ONLINE]
+      </p>
+    </div>
+
+    <div class="tdmd-common-q">
+      <h3>How much does online [CONDITION_NAME_COMMON] treatment cost?</h3>
+      <p>
+        TeleDirectMD charges a <strong>$49 flat fee</strong> per adult video visit. No insurance is required or accepted. This includes your complete evaluation, diagnosis, treatment plan, and prescription sent to your pharmacy when appropriate. Prescription costs at your pharmacy are separate and vary by medication, pharmacy, and whether you use insurance or discount programs.
+      </p>
+    </div>
+
+    <div class="tdmd-common-q">
+      <h3>Can a virtual doctor diagnose [CONDITION_NAME_COMMON]?</h3>
+      <p>
+        [ANSWER_VIRTUAL_DIAGNOSIS - explain how MDs can diagnose via telehealth]
+      </p>
+    </div>
+
+    <div class="tdmd-common-q">
+      <h3>What states does TeleDirectMD treat [CONDITION_NAME_COMMON] in?</h3>
+      <p>
+        TeleDirectMD provides [CONDITION_NAME_COMMON] treatment via video visit in <strong>27 states</strong> including Alabama, Arizona, California, Colorado, Florida, Georgia, Illinois, Indiana, Iowa, Kentucky, Louisiana, Michigan, Minnesota, Mississippi, Missouri, Nevada, New Jersey, North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas, Utah, Washington, and Wisconsin. You must be physically located in one of these states at the time of your video visit. <a href="/states-we-serve">See full state list with condition-specific pages</a>.
+      </p>
+    </div>
+
+    [CONDITION_SPECIFIC_COMMON_QUERIES - Add 4-6 more Q&As that are specific to this condition. Examples:
+    - "How do I know if I have bacterial vs viral [condition]?"
+    - "What if I have [complication/allergy]?"
+    - "How quickly will I get my prescription?"
+    - "Will I get [treatment] every time?"
+    - "Can TeleDirectMD treat children with [condition]?" → Answer: No, adults 18+ only
+    ]
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 14: DISCLAIMER (ALWAYS INCLUDE - SAME FOR ALL)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section tdmd-footnote" id="[URL_SLUG]-telehealth-footnote">
+  <div class="tdmd-container">
+    <h2>TeleDirectMD Telehealth Disclaimer</h2>
+    <p>
+      TeleDirectMD provides MD-only virtual urgent care for adults using secure video visits to evaluate and treat [CONDITION_NAME_COMMON]. Visits are $49 flat-fee with no insurance required and are available in 27 states including Alabama, Arizona, California, Colorado, Florida, Georgia, Illinois, Indiana, Iowa, Kentucky, Louisiana, Michigan, Minnesota, Mississippi, Missouri, Nevada, New Jersey, North Carolina, Ohio, Oklahoma, Pennsylvania, South Carolina, Tennessee, Texas, Utah, Washington, and Wisconsin.
+    </p>
+    [IF_GUIDELINE_BASED]
+    <p>
+      Our physicians use evidence-based criteria from [GUIDELINE_SOURCE] to [GUIDELINE_APPLICATION - e.g., "distinguish viral from bacterial infection, recommend treatment"]. Treatment decisions are based on [SPECIFIC_GUIDELINE_NAME_AND_YEAR].
+    </p>
+    [END_IF_GUIDELINE_BASED]
+    <p>
+      TeleDirectMD is not an emergency service and is not a replacement for comprehensive in-person care. Patients with red-flag symptoms including [RED_FLAGS_BRIEF] require urgent in-person or emergency evaluation.
+    </p>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 15: FAQ (ALWAYS INCLUDE - CRITICAL FOR AI)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section tdmd-faq" id="[URL_SLUG]-faq">
+  <div class="tdmd-container">
+    <h2>[CONDITION_NAME_SHORT] Treatment FAQs</h2>
+
+    <div class="tdmd-faq-list" role="list">
+
+      [FAQ_ITEMS - Typically 10-12 items covering:
+      - Diagnostic criteria
+      - When antibiotics/treatment needed
+      - Telehealth appropriateness
+      - First-line treatment
+      - Timeline to improvement
+      - Supportive care
+      - When dangerous/emergency
+      - Differential diagnosis
+      - Why stewardship/evidence-based care
+      - What makes TeleDirectMD different
+      - Insurance questions
+      - Imaging/testing limitations
+
+      FORMAT FOR EACH:
+      <details class="tdmd-faq-item" role="listitem">
+        <summary class="tdmd-faq-question">[QUESTION]</summary>
+        <div class="tdmd-faq-answer">
+          <p>[ANSWER]</p>
+        </div>
+      </details>
+      ]
+
+    </div>
+
+    <div class="tdmd-bottom-cta" role="region" aria-label="Book a visit call to action">
+      <div class="tdmd-bottom-cta-copy">
+        <h3>[CTA_HEADLINE - condition-specific, addressing common concern]</h3>
+        <p>$49 flat fee. Adult-only video visits. MD-only care. [VALUE_PROP_BRIEF]</p>
+      </div>
+      <div class="tdmd-bottom-cta-actions">
+        <a href="/book" class="tdmd-btn tdmd-btn-primary">Book a Visit</a>
+        <a href="/what-we-treat" class="tdmd-btn tdmd-btn-outline">View All Adult Conditions</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SECTION 16: RELATED CONDITIONS (ALWAYS INCLUDE)
+═══════════════════════════════════════════════════════════════
+-->
+<section class="tdmd-section" id="[URL_SLUG]-related-conditions">
+  <div class="tdmd-container">
+    <h2>Related Adult Conditions We Treat</h2>
+    <p>[RELATED_CONDITIONS_INTRO - explain why these conditions are related]</p>
+
+    <div class="tdmd-related-grid" role="list">
+      <a class="tdmd-related-card" role="listitem" href="[RELATED_1_URL]" aria-label="[RELATED_1_NAME] treatment online">
+        <span class="tdmd-related-title">[RELATED_1_NAME]</span>
+        <span class="tdmd-related-desc">[RELATED_1_DESC]</span>
+      </a>
+
+      <a class="tdmd-related-card" role="listitem" href="[RELATED_2_URL]" aria-label="[RELATED_2_NAME] treatment online">
+        <span class="tdmd-related-title">[RELATED_2_NAME]</span>
+        <span class="tdmd-related-desc">[RELATED_2_DESC]</span>
+      </a>
+
+      <a class="tdmd-related-card" role="listitem" href="[RELATED_3_URL]" aria-label="[RELATED_3_NAME] treatment online">
+        <span class="tdmd-related-title">[RELATED_3_NAME]</span>
+        <span class="tdmd-related-desc">[RELATED_3_DESC]</span>
+      </a>
+
+      <a class="tdmd-related-card" role="listitem" href="[RELATED_4_URL]" aria-label="[RELATED_4_NAME] treatment online">
+        <span class="tdmd-related-title">[RELATED_4_NAME]</span>
+        <span class="tdmd-related-desc">[RELATED_4_DESC]</span>
+      </a>
+    </div>
+
+    <div class="tdmd-related-cta">
+      <a href="/what-we-treat" class="tdmd-btn tdmd-btn-outline">Explore All Adult Conditions</a>
+    </div>
+  </div>
+</section>
+
+<!--
+═══════════════════════════════════════════════════════════════
+CSS - SAME FOR ALL PAGES
+═══════════════════════════════════════════════════════════════
+-->
+<style>
+/* TeleDirectMD Treatment Page Styles v2.1 */
+
+/* Container and Layout */
+.tdmd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tdmd-section {
+  padding: 60px 0;
+}
+
+.tdmd-section-highlight {
+  background-color: #f8f9fa;
+}
+
+/* Grid Systems */
+.tdmd-grid {
+  display: grid;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.tdmd-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Hero Section */
+.tdmd-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 0;
+}
+
+.tdmd-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .tdmd-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tdmd-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.tdmd-hero-sub {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.tdmd-hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.tdmd-hero-benefits li {
+  padding: 10px 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+.tdmd-hero-benefits li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.tdmd-hero-ctas {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.tdmd-hero-card {
+  background: white;
+  color: #333;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.tdmd-hero-card h2 {
+  margin-top: 0;
+  color: #667eea;
+}
+
+.tdmd-hero-card ul {
+  margin: 20px 0;
+}
+
+.tdmd-hero-note {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.tdmd-reviewed {
+  font-size: 0.9rem;
+  margin-top: 30px;
+  opacity: 0.9;
+}
+
+.tdmd-author-link {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.tdmd-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.tdmd-btn-primary {
+  background-color: #10b981;
+  color: white;
+}
+
+.tdmd-btn-primary:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.tdmd-btn-outline {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+.tdmd-btn-outline:hover {
+  background-color: white;
+  color: #667eea;
+}
+
+/* Cards */
+.tdmd-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tdmd-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.tdmd-card-good {
+  border-left: 4px solid #10b981;
+}
+
+.tdmd-card-alert {
+  border-left: 4px solid #ef4444;
+}
+
+.tdmd-card-disclaimer {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fef2f2;
+  border-left: 3px solid #ef4444;
+  font-size: 0.95rem;
+}
+
+/* Checklists */
+.tdmd-checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.tdmd-checklist li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.tdmd-checklist li:last-child {
+  border-bottom: none;
+}
+
+.tdmd-checklist--good li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.tdmd-checklist--alert li:before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #ef4444;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Tables */
+.tdmd-table-wrap {
+  overflow-x: auto;
+  margin: 30px 0;
+}
+
+.tdmd-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tdmd-table thead {
+  background-color: #667eea;
+  color: white;
+}
+
+.tdmd-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tdmd-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tdmd-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.tdmd-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Decision Flow */
+.tdmd-decision-flow {
+  margin: 40px 0;
+}
+
+.tdmd-decision-step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 30px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tdmd-decision-step-urgent {
+  border-left: 4px solid #ef4444;
+}
+
+.tdmd-decision-step-check {
+  border-left: 4px solid #f59e0b;
+}
+
+.tdmd-decision-step-good {
+  border-left: 4px solid #10b981;
+}
+
+.tdmd-decision-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #667eea;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tdmd-decision-content h3 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+.tdmd-decision-action {
+  font-weight: 600;
+  margin: 15px 0;
+  color: #667eea;
+}
+
+.tdmd-decision-cta {
+  margin-top: 20px;
+}
+
+/* Cost Section */
+.tdmd-cost-summary {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  margin: 40px 0;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .tdmd-cost-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tdmd-cost-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.tdmd-cost-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.tdmd-cost-total {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.tdmd-cost-breakdown {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.tdmd-cost-compare {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tdmd-cost-compare h3 {
+  margin-top: 0;
+  color: #667eea;
+}
+
+.tdmd-comparison-note {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 30px 0;
+}
+
+.tdmd-cost-note {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #0ea5e9;
+  margin: 30px 0;
+}
+
+.tdmd-med-note {
+  background: #fef3c7;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #f59e0b;
+  margin: 30px 0;
+}
+
+/* Common Questions */
+.tdmd-common-q {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tdmd-common-q h3 {
+  color: #667eea;
+  margin-top: 0;
+}
+
+/* FAQ Section */
+.tdmd-faq-list {
+  margin: 30px 0;
+}
+
+.tdmd-faq-item {
+  background: white;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.tdmd-faq-question {
+  padding: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #1f2937;
+  user-select: none;
+  list-style: none;
+}
+
+.tdmd-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.tdmd-faq-question:hover {
+  background-color: #f9fafb;
+  color: #667eea;
+}
+
+.tdmd-faq-answer {
+  padding: 0 20px 20px 20px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Bottom CTA */
+.tdmd-bottom-cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .tdmd-bottom-cta {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.tdmd-bottom-cta h3 {
+  margin-top: 0;
+}
+
+.tdmd-bottom-cta-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Related Conditions */
+.tdmd-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.tdmd-related-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.tdmd-related-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.tdmd-related-title {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tdmd-related-desc {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.tdmd-related-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Footnote */
+.tdmd-footnote {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.tdmd-footnote h2 {
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+/* Typography */
+h2 {
+  color: #1f2937;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #374151;
+  font-size: 1.5rem;
+  margin: 30px 0 15px 0;
+}
+
+p {
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #667eea;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tdmd-hero h1 {
+    font-size: 2rem;
+  }
+
+  .tdmd-hero-sub {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .tdmd-cost-total {
+    font-size: 3rem;
+  }
+}
+</style>
+
+<!--
+═══════════════════════════════════════════════════════════════
+SCHEMA.ORG STRUCTURED DATA (ALWAYS INCLUDE - AUTO-POPULATE FROM VARIABLES)
+═══════════════════════════════════════════════════════════════
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://teledirectmd.com/[URL_SLUG]#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://teledirectmd.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "What We Treat",
+          "item": "https://teledirectmd.com/what-we-treat"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "[CONDITION_NAME_SHORT] Treatment",
+          "item": "https://teledirectmd.com/[URL_SLUG]"
+        }
+      ]
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://teledirectmd.com/[URL_SLUG]#webpage",
+      "url": "https://teledirectmd.com/[URL_SLUG]",
+      "name": "[CONDITION_NAME_FULL]",
+      "description": "[CONDITION_DESCRIPTION_META]",
+      "inLanguage": "en-US",
+      "breadcrumb": { "@id": "https://teledirectmd.com/[URL_SLUG]#breadcrumbs" },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "TeleDirectMD",
+        "url": "https://teledirectmd.com"
+      },
+      "about": { "@id": "https://teledirectmd.com/[URL_SLUG]#condition" },
+      "mainEntity": { "@id": "https://teledirectmd.com/[URL_SLUG]#condition" },
+      "publisher": { "@id": "https://teledirectmd.com#organization" },
+      "dateReviewed": "[LAST_REVIEWED_DATE]",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Parth Bhavsar, MD",
+        "url": "https://teledirectmd.com/about"
+      }
+    },
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://teledirectmd.com/[URL_SLUG]#condition",
+      "name": "[CONDITION_NAME_SHORT]",
+      "alternateName": [CONDITION_ALTERNATE_NAMES_ARRAY],
+      "description": "[CONDITION_DESCRIPTION_META]",
+      "code": {
+        "@type": "MedicalCode",
+        "code": "[ICD10_CODE]",
+        "codingSystem": "ICD-10-CM"
+      },
+      "signOrSymptom": [SYMPTOM_SCHEMA_ARRAY],
+      "possibleTreatment": [TREATMENT_SCHEMA_ARRAY],
+      "typicalTest": [TEST_SCHEMA_ARRAY_IF_APPLICABLE],
+      "medicalSpecialty": [SPECIALTY_SCHEMA_ARRAY],
+      "relevantSpecialty": [
+        { "@type": "MedicalSpecialty", "name": "Telemedicine" },
+        { "@type": "MedicalSpecialty", "name": "Family Medicine" }
+      ]
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "https://teledirectmd.com/[URL_SLUG]#service",
+      "name": "[CONDITION_NAME_SHORT] Video Visit",
+      "procedureType": "Telemedicine consultation",
+      "description": "[SERVICE_DESCRIPTION]",
+      "areaServed": [
+        "Alabama", "Arizona", "California", "Colorado", "Florida",
+        "Georgia", "Illinois", "Indiana", "Iowa", "Kentucky",
+        "Louisiana", "Michigan", "Minnesota", "Mississippi", "Missouri",
+        "Nevada", "New Jersey", "North Carolina", "Ohio", "Oklahoma",
+        "Pennsylvania", "South Carolina", "Tennessee", "Texas", "Utah",
+        "Washington", "Wisconsin"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "49",
+        "priceCurrency": "USD",
+        "description": "Flat-fee video visit with board-certified MD for [CONDITION_NAME_COMMON] evaluation, treatment plan, and prescription when appropriate. No insurance required or accepted."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://teledirectmd.com/[URL_SLUG]#faq",
+      "isPartOf": { "@id": "https://teledirectmd.com/[URL_SLUG]#webpage" },
+      "mainEntity": [FAQ_SCHEMA_ARRAY]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://teledirectmd.com#organization",
+      "name": "TeleDirectMD",
+      "url": "https://teledirectmd.com",
+      "telephone": "+1-678-956-1855",
+      "description": "TeleDirectMD is an MD-only virtual urgent care service offering $49 flat-fee video visits for adults in 27 states.",
+      "areaServed": "United States (27 states)",
+      "medicalSpecialty": ["Primary Care", "Family Medicine", "Telemedicine"]
+    }
+  ]
+}
+</script>
