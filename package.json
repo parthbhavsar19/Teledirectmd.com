@@ -1,0 +1,29 @@
+{
+  "name": "teledirectmd.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "remotion:preview": "remotion preview remotion/index.ts",
+    "remotion:render:overview": "remotion render remotion/index.ts ServiceOverview out/service-overview.mp4",
+    "remotion:render:ad": "remotion render remotion/index.ts AppointmentAd out/appointment-ad.mp4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:36589/git/parthbhavsar19/Teledirectmd.com"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/bundler": "^4.0.434",
+    "@remotion/cli": "^4.0.434",
+    "@remotion/renderer": "^4.0.434",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.434",
+    "typescript": "^5.9.3"
+  }
+}
